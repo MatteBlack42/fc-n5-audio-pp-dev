@@ -1,0 +1,32 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+  python_version: 3
+
+#[START gae_flex_storage_yaml]
+env_variables:
+    CLOUD_STORAGE_BUCKET: fc-n5-audio-process
+    DB_USER: andresbot
+    DB_PASS: 123456
+    DB_NAME: audios_storage
+    DB_HOST: 35.196.122.176:5050
+
+    # Database Mock PostgreSQL
+    #DB_USER: eyogyeoo
+    #DB_PASS: uENjChCcsy4fh4UGMziwwR--fq3qXq1r
+    #DB_NAME: eyogyeoo
+    #DB_HOST: batyr.db.elephantsql.com
+	#DB_PORT: 5432
+#[END gae_flex_storage_yaml]
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+#beta_settings:
+#  cloud_sql_instances: flash-time-312614:us-east1:sql-fc-n5-audio-process=tcp:5050

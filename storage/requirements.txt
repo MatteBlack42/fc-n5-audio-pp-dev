@@ -1,0 +1,13 @@
+Flask==1.1.2
+google-cloud-storage==1.38.0
+gunicorn==20.0.4; python_version > '3.0'
+gunicorn==19.10.0; python_version < '3.0'
+SQLAlchemy==1.4.11
+python-tds==1.11.0
+sqlalchemy-pytds==0.3.3
+pyopenssl==20.0.1
+
+matplotlib==3.4.2
+hurry.filesize==0.9
+librosa==0.8.1
+psycopg2==2.8.6

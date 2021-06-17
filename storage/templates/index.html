@@ -1,0 +1,90 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="baseLayout">
+    <div class="coltwo"></div>
+    <!-- Uploaded tracks list -->
+    <div class="uploads">
+        <h2>Audios Cargados</h2>
+        <ul class="uploadScroll">
+            {%for audio in audios%}
+            <li>
+                <a class="audioText">{{audio["name"]}}</a>
+                <a class="audioTextsize">{{audio["size"]}}b</a>
+                <a
+                    id="sa"
+                    href="/getprocess/{{audio['name']}}"
+                    class="processButton"
+                    >Procesar</a
+                >
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
+
+    <!-- Processed track's plot -->
+    <div class="plot">
+        <div id="audioTitle">
+            {%if plots%}
+            <i id="volume" class="fa fa-volume-up"></i>
+            <h2>{{selName}}</h2>
+            {%endif%}
+        </div>
+        <div class="plotContainer">
+            {%if plots == False%}
+            <div class="noProcess">
+                <i id="file" class="fa fa-play-circle"></i>
+                <h2>Aún no has procesado ningun audio</h2>
+            </div>
+            {%endif%} {%if plots%}
+            <lottie-player
+                class="player"
+                src="https://assets1.lottiefiles.com/packages/lf20_wXkQAA.json"
+                background="transparent"
+                speed="1"
+                style="
+                    width: 300px;
+                    height: 300px;
+                    margin: auto;
+                    position: sticky;
+                "
+                loop
+                autoplay
+            ></lottie-player>
+            <img class="plotImg" src="{{plots}}" alt="" />
+
+            {%endif%}
+        </div>
+    </div>
+
+    <!-- Title Bar and Upload File -->
+    <div class="topbar">
+        <h1>Procesamiento de audio</h1>
+        <form
+            class="topForm"
+            method="POST"
+            action="/upload"
+            enctype="multipart/form-data"
+        >
+            <span class="fileInput">
+                <input
+                    id="fileInput"
+                    class="fileInput"
+                    type="file"
+                    name="file"
+                />
+            </span>
+            <label for="fileInput">
+                <span class="fileInput"> Seleccionar archivo </span>
+                <i class="fa fa-cloud" id="cloud"></i>
+            </label>
+            <input
+                class="fileButton"
+                type="submit"
+                onclick="$('#loading').show();"
+                value="Cargar"
+            />
+        </form>
+    </div>
+</div>
+
+{% endblock %}

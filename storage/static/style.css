@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+
+html {
+    height: 100%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e4e4f0;
+    /* padding: 3rem; */
+    min-height: 100%;
+}
+h1 {
+    margin: 0;
+    color: #131717;
+}
+h2 {
+    color: #42424c;
+    margin: 0;
+    font-size: 18px;
+}
+ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: auto;
+    height: 750px;
+}
+
+.uploadScroll::-webkit-scrollbar {
+    width: 0 !important;
+}
+a {
+    text-decoration: none;
+}
+li {
+    display: flex;
+    border-radius: 20px;
+    background-color: #fcfcfc;
+    padding: 0.9rem;
+    transition: 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+li:hover {
+    box-shadow: 0px 0px 14px 2px rgba(130, 71, 168, 0.24);
+}
+#file {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    font-size: 100px;
+    color: #605bff;
+}
+#volume {
+    font-size: 25px;
+    color: #605bff;
+    padding-right: 2rem;
+}
+#audioTitle {
+    display: flex;
+    flex-direction: row;
+}
+.audioText {
+    padding: 0.4rem;
+    max-width: 15rem;
+    text-overflow: ellipsis;
+    max-height: 1rem;
+    max-lines: 1;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.audioTextsize {
+    padding: 0.4rem;
+    font-weight: 700;
+    color: #605bff;
+    margin-left: auto;
+}
+
+.topbar {
+    padding: 4rem;
+    display: flex;
+    flex-direction: row;
+    grid-column: 1 / 8;
+    grid-row: 1;
+}
+.topForm {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    height: fit-content;
+}
+#fileInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+label[for='fileInput'] {
+    font-size: 20px;
+    color: #85888f;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 20px;
+    transition: 0.3s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 20rem;
+    display: block;
+}
+label[for='fileInput']:hover {
+    box-shadow: 0px 0px 14px 2px rgba(130, 71, 168, 0.24);
+}
+
+#cloud {
+    padding-left: 3rem;
+}
+.fileButton {
+    font-size: 20px;
+    border: none;
+    padding: 1rem;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #605bff;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    top: 0;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.fileButton:hover {
+    box-shadow: 0px 0px 14px 2px rgba(130, 71, 168, 0.24);
+    opacity: 0.9;
+}
+.processButton {
+    font-size: 20px;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #605bff;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 3rem;
+    text-decoration: none;
+}
+.processButton:hover {
+    box-shadow: 0px 0px 14px 2px rgba(130, 71, 168, 0.24);
+    opacity: 0.9;
+}
+
+.baseLayout {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    /* width: 100vw;
+    height: 100vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.uploads {
+    grid-column: 1/4;
+    grid-row: 2 / 6;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.plotImg {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+img.loading {
+    background: transparent
+        url(https://flevix.com/wp-content/uploads/2020/01/Bounce-Bar-Preloader-1.gif)
+        no-repeat scroll center center;
+}
+.noProcess {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.plotContainer {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 480px;
+    min-height: 480px;
+    display: flex;
+    position: relative;
+}
+
+.coltwo {
+    grid-column: 4 / 8;
+    grid-row: 1 / 8;
+    background-color: #efeff7;
+    border-top-left-radius: 43px;
+    border-bottom-left-radius: 43px;
+    box-shadow: -3px 3px 30px -1px rgba(124, 124, 168, 0.1);
+}
+.plot {
+    grid-column: 4 / 8;
+    grid-row: 2 / 6;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+}
